@@ -4,11 +4,13 @@
     <title><%= content_for(:title) || "Airbnb" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= yield :head %>
-
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
     <link rel="manifest" href="/manifest.json">
     <link rel="icon" href="/icon.png" type="image/png">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
@@ -19,6 +21,7 @@
   </head>
 
   <body>
+    <%= render 'layouts/header' %>
     <%= yield %>
   </body>
 </html>
