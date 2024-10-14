@@ -33,10 +33,16 @@ This is a learing project on Ruby on Rails. Source course: [Ruby on Rails (2024)
 | `README.md`           | A basic overview of the project, often with setup instructions                                       |
 
 # Add tailwind css to the project
+Source: https://tailwindcss.com/docs/guides/ruby-on-rails
+
 ```bash
 bundle add tailwindcss-rails
 ```
 After adding the bundle, install the tailwind css to the project
 ```bash
 rails tailwindcss:install
+```
+After installing the tailwind css, we need to build it.
+```bash
+bin/dev
 ```
