@@ -36,3 +36,7 @@ This is a learing project on Ruby on Rails. Source course: [Ruby on Rails (2024)
 ```bash
 bundle add tailwindcss-rails
 ```
+After adding the bundle, install the tailwind css to the project
+```bash
+rails tailwindcss:install
+```
