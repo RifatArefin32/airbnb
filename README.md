@@ -31,3 +31,8 @@ This is a learing project on Ruby on Rails. Source course: [Ruby on Rails (2024)
 | `Gemfile`             | Defines gem dependencies for the Rails app                                                           |
 | `Rakefile`            | Defines custom or prebuilt Rake tasks for automation. Rake tasks are commands defined in Ruby that automate common jobs or processes in a Rails application. Rake tasks can handle things like database migrations, running tests, clearing logs, and even custom operations you define yourself.                                                 |
 | `README.md`           | A basic overview of the project, often with setup instructions                                       |
+
+# Add tailwind css to the project
+```bash
+bundle add tailwindcss-rails
+```
