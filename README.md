@@ -46,3 +46,5 @@ After installing the tailwind css, we need to build it.
 ```bash
 bin/dev
 ```
+
+# Add user authentication using devise
