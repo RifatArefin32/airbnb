@@ -58,3 +58,4 @@ gem "tailwindcss-rails", "~> 2.7"
 
 gem "devise", "~> 4.9"
 gem "faker"
+gem "image_processing", ">= 1.2"
