@@ -8,7 +8,7 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-properties = Property.create({
+Property.create({
   name: "Lichi Garden",
   headline: "Best Resort in Jungle",
   description: "This is one of the best resort in Bangladesh",
@@ -18,4 +18,27 @@ properties = Property.create({
   state: "Charghat",
   country: "Bangladesh",
   price: "4800"
+})
+
+Property.create({
+  name: "Mango Garden",
+  headline: "Best Resort in Mango Garden",
+  description: "This is one of the best resort in Rajshahi",
+  address_1: "Rajshahi, Bangladesh",
+  address_2: "Dinajpur, Bangladesh",
+  city: "Rajshahi",
+  state: "Charghat",
+  country: "Bangladesh",
+  price: "5000"
+})
+
+Property.create({
+  name: "Orange Garden",
+  headline: "Best Resort in Sylhet",
+  description: "This is one of the best resort in Sylhet",
+  address_1: "Sylhet, Bangladesh",
+  city: "Sylhet",
+  state: "Jalalabad",
+  country: "Bangladesh",
+  price: "4500"
 })
