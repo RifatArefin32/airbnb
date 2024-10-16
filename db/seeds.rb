@@ -7,3 +7,14 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+properties = Property.create({
+  name: "Lichi Garden",
+  headline: "Best Resort in Jungle",
+  description: "This is one of the best resort in Bangladesh",
+  address_1: "Rajshahi, Bangladesh",
+  address_2: "Dinajpur, Bangladesh",
+  city: "Rajshahi",
+  state: "Charghat",
+  country: "Bangladesh", # rubocop:disable Style/TrailingCommaInHashLiteral
+})
