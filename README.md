@@ -47,4 +47,4 @@ After installing the tailwind css, we need to build it.
 bin/dev
 ```
 
-# Add user authentication using devise
+# Add faker gem
