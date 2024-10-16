@@ -53,3 +53,8 @@ Active Storage facilitates uploading files to a cloud storage service like Amazo
 - Add gem `gem "image_processing", ">= 1.2"` to the `Gemfile`
 - Run `bundle install`
 - Run `rails active_storage:install`
+
+
+# Add model with references (foreign keys)
+Lets create a model for feedback with rating and review_text. This model references `user` and `property` model
+`rails g model feedback rating:integer review_text:text user:references property:references`
