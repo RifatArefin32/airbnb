@@ -16,18 +16,18 @@
   <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
     <h2 class="sr-only">Products</h2>
     <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
-        <% @properties.size do %>
-            <a href="#" class="group">
-                <div class="aspect-h-2 aspect-w-2 w-full overflow-hidden rounded-lg bg-gray-200">
-                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-48655909/original/ec8545fa-3fe6-4220-9e90-8c8fa7de35af.jpeg?im_w=1200" 
-                alt="Tall slender porcelain bottle with natural clay textured body and cork stopper." 
-                class="min-h-[200px] max-h-[200px] h-full w-full object-cover object-center group-hover:opacity-75">
-                </div>
-                <h3 class="mt-4 text-sm text-gray-700">Mango Garden Resort</h3>
-                <h3 class="mt-1 text-sm text-gray-700">Rajshahi, Bangladesh</h3>
-                <p class="mt-1 text-lg font-medium text-gray-900">$48 night</p>
-            </a>
-        <% end %>
+      <% @properties.each do |property| %>
+        <a href="#" class="group">
+          <div class="aspect-h-2 aspect-w-2 w-full overflow-hidden rounded-lg bg-gray-200">
+            <img src="https://a0.muscache.com/im/pictures/miso/Hosting-48655909/original/ec8545fa-3fe6-4220-9e90-8c8fa7de35af.jpeg?im_w=1200" 
+                  alt="Tall slender porcelain bottle with natural clay textured body and cork stopper." 
+                  class="min-h-[200px] max-h-[200px] h-full w-full object-cover object-center group-hover:opacity-75">
+          </div>
+          <h3 class="mt-4 text-sm text-gray-700"> <%= property.name %></h3>
+          <h3 class="mt-1 text-sm text-gray-700"> <%= property.state %>, <%= property.country %> </h3>
+          <p class="mt-1 text-lg font-medium text-gray-900"> <%= property.price %> BDT night</p>
+        </a>
+      <% end %>
     </div>
   </div>
 </div>

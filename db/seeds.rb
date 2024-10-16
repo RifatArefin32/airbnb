@@ -16,5 +16,6 @@ properties = Property.create({
   address_2: "Dinajpur, Bangladesh",
   city: "Rajshahi",
   state: "Charghat",
-  country: "Bangladesh", # rubocop:disable Style/TrailingCommaInHashLiteral
+  country: "Bangladesh",
+  price: "4800"
 })

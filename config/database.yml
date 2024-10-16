@@ -78,8 +78,24 @@ test:
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
 #
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: postgres  # Use the postgres user
+  password: password  # Use the password you set
+  host: localhost  # Usually localhost
+
+development:
+  <<: *default
+  database: airbnb_development
+
+test:
+  <<: *default
+  database: airbnb_test
+
 production:
   <<: *default
   database: airbnb_production
-  username: airbnb
-  password: <%= ENV["AIRBNB_DATABASE_PASSWORD"] %>
+  username: your_production_user  # Use a different user if needed
+  password: <%= ENV['YOUR_DATABASE_PASSWORD'] %>

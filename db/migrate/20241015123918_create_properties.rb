@@ -9,6 +9,7 @@ class CreateProperties < ActiveRecord::Migration[7.2]
       t.string :city
       t.string :state
       t.string :country
+      t.decimal :price, precision: 10, scale: 2
 
       t.timestamps
     end

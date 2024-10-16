@@ -23,6 +23,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_15_123918) do
     t.string "city"
     t.string "state"
     t.string "country"
+    t.decimal "price", precision: 10, scale: 2
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
