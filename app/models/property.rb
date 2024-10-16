@@ -7,4 +7,6 @@ class Property < ApplicationRecord
   validates :state, presence: :true
   validates :country, presence: :true
   validates :price, presence: :true
+
+  has_many_attached :images
 end

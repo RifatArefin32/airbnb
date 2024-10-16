@@ -50,3 +50,6 @@ bin/dev
 # How to add images in rails
 Using `Active Storage`:
 Active Storage facilitates uploading files to a cloud storage service like Amazon S3, Google Cloud Storage, or Microsoft Azure Storage and attaching those files to Active Record objects. It comes with a local disk-based service for development and testing and supports mirroring files to subordinate services for backups and migrations.
+- Add gem `gem "image_processing", ">= 1.2"` to the `Gemfile`
+- Run `bundle install`
+- Run `rails active_storage:install`

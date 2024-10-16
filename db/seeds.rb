@@ -20,7 +20,7 @@
 #   price: "4800",
 # })
 
-20.times do
+6.times do |i|
   Property.create({
     name: Faker::Company.name,
     headline: Faker::Lorem.unique.sentence(word_count: 5),
@@ -30,6 +30,7 @@
     city: Faker::Address.city,
     state: Faker::Address.state,
     country: Faker::Address.country,
-    price: Faker::Commerce.price
+    price: Faker::Commerce.price,
+    image_url: "/images/property_#{i+1}.jpeg"
   })
 end
