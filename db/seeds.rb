@@ -20,17 +20,33 @@
 #   price: "4800",
 # })
 
+properties = []
+
 6.times do |i|
-  Property.create({
+  property = Property.create!(
     name: Faker::Company.name,
     headline: Faker::Lorem.unique.sentence(word_count: 5),
     description: Faker::Lorem.paragraph(sentence_count: 10),
     address_1: Faker::Address.full_address,
-    address_2: Faker::Address.full_address,
+    address_2: Faker::Address.secondary_address,
     city: Faker::Address.city,
     state: Faker::Address.state,
     country: Faker::Address.country,
     price: Faker::Commerce.price,
     image_url: "/images/property_#{i+1}.jpeg"
-  })
+  )
+  properties << property  # Store the property object in the array
 end
+
+user = User.create!(
+  email: Faker::Internet.email,
+  password: 'password123',   # Replace this with any password you prefer
+  password_confirmation: 'password123'
+)
+
+feedback = Feedback.create({
+  rating: 1,
+  review_text: Faker::Lorem.sentence(word_count: 15),
+  user: user,
+  property: properties[0]
+}) # rubocop:disable Layout/TrailingEmptyLines
