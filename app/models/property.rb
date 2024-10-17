@@ -9,4 +9,6 @@ class Property < ApplicationRecord
   validates :price, presence: :true
 
   has_many_attached :images
+
+  has_many :feedbacks
 end
