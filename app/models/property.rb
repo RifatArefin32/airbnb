@@ -11,4 +11,9 @@ class Property < ApplicationRecord
   has_many_attached :images
 
   has_many :feedbacks
+
+  def average_rating
+    average = feedbacks.average(:rating) || 0
+    average.round(1)
+  end
 end
