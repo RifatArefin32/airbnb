@@ -7,8 +7,8 @@ export default class extends Controller {
   static targets = ['openUserMenu', 'dropdown', ]
 
   connect() {
-    console.log("Header connected");
-    console.log();
+    // console.log("Header connected");
+    // console.log();
 
     this.openUserMenuTarget.addEventListener("click", (e) => {
       console.log("Header Click");
