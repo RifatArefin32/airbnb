@@ -13,4 +13,9 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "home#index"
+
+  # Add namespaces for APIs
+  namespace :api do
+    resources :wishlists
+  end
 end

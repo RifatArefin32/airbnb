@@ -10,7 +10,9 @@ class Property < ApplicationRecord
 
   has_many_attached :images
 
-  has_many :feedbacks
+  has_many :feedbacks, dependent: :destroy
+  has_many :wishlists, dependent: :destroy
+  has_many :wishlisted_users, through: :wishlist, source: :user, dependent: :destroy
 
   def average_rating
     average = feedbacks.average(:rating) || 0

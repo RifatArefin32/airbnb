@@ -1,31 +1,35 @@
-import { Controller } from "@hotwired/stimulus"
+import { Controller } from "@hotwired/stimulus";
 
 export default class extends Controller {
-  connect() {
-    // this.element.textContent = "wishlist connected"
-    console.log('wishlist start');
+  static targets = ["message"];
 
-    if(this.element.textContent === "Wishlisted") {
-      this.element.textContent = "Wishlisted";
-      this.element.classList.add("text-green-500");
-    }
-    else {
-      this.element.textContent = "Add to wishlist";
-      this.element.classList.add("text-red-500");
-    }
-  }
+  addToWishlist(event) {
+    event.preventDefault(); // Prevent the default button action
 
-  updateWishlistStatus() {
-    console.log(this.element.textContent);
-    if(this.element.textContent === "Add to wishlist") {
-      this.element.textContent = "Wishlisted";
-      this.element.classList.add("text-green-500");
-    }
-    else {
-      this.element.textContent = "Wishlisted";
-      this.element.classList.add("text-red-500");
-    }
+    const itemId = event.currentTarget.dataset.itemId; // Get the item ID
 
-    console.log(this.element.textContent);
+    fetch(`/api/wishlists`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "X-CSRF-Token": document.querySelector('meta[name="csrf-token"]').getAttribute('content') // Include CSRF token
+      },
+      body: JSON.stringify({ wishlist: { item_id: itemId } })
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(data => {
+      // Update the button text and any messages based on the response
+      event.currentTarget.textContent = 'Added to Wishlist';
+      this.messageTarget.textContent = data.message || 'Item added to wishlist!';
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      this.messageTarget.textContent = 'Failed to add item to wishlist.';
+    });
   }
 }

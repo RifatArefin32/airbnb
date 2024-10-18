@@ -24,12 +24,24 @@
             class:"min-h-[200px] max-h-[200px] h-full w-full object-cover object-center group-hover:opacity-75"%>
           </div>
           <div class="flex justify-between text-sm text-gray-700 mt-4">
-            <span class="left-text"> Rating <%= format('%.1f', property.average_rating) %> </span>
-            <span class="right-text cursor-pointer"
-                  data-controller="wishlist"
-                  data-action="click->wishlist#updateWishlistStatus"> 
-            </span>
+            <div>
+              <span class="left-text"> Rating <%= format('%.1f', property.average_rating) %> </span>
+            </div>
+            <div>
+              <%= button_to 'Add to Wishlist', 
+                api_wishlists_path, 
+                method: :post, 
+                params: { 
+                  property_id: property.id, 
+                  user_id: 7 
+                }, 
+                remote: true, 
+                class: 'wishlist-link font-xl text-red-500' 
+              %>
+            </div>
           </div>
+          <div id="wishlist-message"></div>
+          <div id="wishlist-message"></div>
           <h3 class="mt-1 text-sm text-gray-700"> <%= property.name %></h3>
           <h3 class="mt-1 text-sm text-gray-700"> <%= property.state %>, <%= property.country %> </h3>
           <p class="mt-1 text-lg font-medium text-gray-900"> <%= property.price %> BDT night</p>
